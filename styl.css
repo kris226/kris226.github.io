@@ -5,3 +5,16 @@ p {
 a {
     color:rgb(255, 0, 0); font-size: 75px;
 }
+
+h1, a, p, button {
+    text-align: center;
+  }
+
+
+
+
+
+
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  }
