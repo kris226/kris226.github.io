@@ -10,7 +10,12 @@ h1, a, p, button {
     text-align: center;
   }
 
-
+  .menu {
+    width: 60%;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
 
@@ -18,3 +23,22 @@ h1, a, p, button {
 body {
     background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   }
+
+
+
+  .center-buttons {
+    display: flex;
+    flex-direction: column; /* stack buttons and link vertically */
+    align-items: center;    /* center horizontally */
+    justify-content: center;
+    gap: 10px;              /* space between elements */
+    margin-top: 20px;
+  }
+  
+  .center-buttons button,
+  .center-buttons a {
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
