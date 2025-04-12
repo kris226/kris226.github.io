@@ -42,3 +42,20 @@ body {
     font-size: 16px;
   }
   
+
+  .fruitTexts{
+    width: 60%;
+    background-color: rgb(0, 218, 170);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column; /* stack buttons and link vertically */
+    align-items: center;    /* center horizontally */
+    justify-content: center;
+    gap: 10px;              /* space between elements */
+    margin-top: 20px;
+  }
