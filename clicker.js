@@ -34,16 +34,16 @@ function NextDay()
     document.getElementById("applePriceText").innerText = `Apple ${applePrice}`;
 
     pearPrice = Math.floor(Math.random() * 11) + 30;
-    document.getElementById("pearPriceText").innerText = `Pear ${applePrice}`;
+    document.getElementById("pearPriceText").innerText = `Pear ${pearPrice}`;
     
     bananaPrice = Math.floor(Math.random() * 11) + 30;
-    document.getElementById("bananaPriceText").innerText = `Banana ${applePrice}`;
+    document.getElementById("bananaPriceText").innerText = `Banana ${bananaPrice}`;
     
     peachPrice = Math.floor(Math.random() * 11) + 30;
-    document.getElementById("peachPriceText").innerText = `Peach ${applePrice}`;
+    document.getElementById("peachPriceText").innerText = `Peach ${peachPrice}`;
     
     pineapplePrice = Math.floor(Math.random() * 11) + 30;
-    document.getElementById("pineapplePriceText").innerText = `Pineapple ${applePrice}`;
+    document.getElementById("pineapplePriceText").innerText = `Pineapple ${pineapplePrice}`;
     
 
 
