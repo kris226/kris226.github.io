@@ -58,4 +58,3 @@ document.getElementById("clicker").addEventListener("click", changeScore);
 
 document.getElementById("upgrador").addEventListener("click", upgrade);
 
-document.getElementById("nextDay").addEventListener("click", NextDay);

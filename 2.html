@@ -1,9 +1,9 @@
 <html>
 
 <head>
-    <title>polevky</title>
-    <link rel="stylesheet" href="polevky.css">
-    <script src= "polevky.js" defer> </script>
+    <title>fruits</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src= "fruits.js" defer> </script>
     
     
     
@@ -11,18 +11,20 @@
 
 <body>  
     
-    
-    <h1>Jak moc ti dneska chutnala polévka?</h1>
+    <div class = "fruitTab">
 
+        <article><p class="moneyText" id="moneyText">Money:</p><p class= "moneyText" id="moneyCountText">100</p></article>
+        
+        <div class="fruitTexts">
+            <article class="item"><p class="item-text">Apple</p><p class="item-count item-count-margin" id="appleInventoryText">0</p> <p class="item-count" id="applePriceText">0</p><button class="buysellButton">Buy</button><button class="buysellButton">Sell</button></article>
+            <article class="item"><p class="item-text">Pear</p><p class="item-count item-count-margin" id="pearInventoryText">0</p><p class="item-count" id="pearPriceText">0</p><button class="buysellButton">Buy</button><button class="buysellButton">Sell</button></article>
+            <article class="item"><p class="item-text">Banana</p><p class="item-count item-count-margin" id="bananaInventoryText">0</p><p class="item-count" id="bananaPriceText">0</p><button class="buysellButton">Buy</button><button class="buysellButton">Sell</button></article>
+            <article class="item"><p class="item-text">Peach</p><p class="item-count item-count-margin" id="peachInventoryText">0</p><p class="item-count" id="peachPriceText">0</p><button class="buysellButton">Buy</button><button class="buysellButton">Sell</button></article>
+            <article class="item"><p class="item-text">Pineapple</p><p class="item-count item-count-margin" id="pineappleInventoryText">0</p><p class="item-count" id="pineapplePriceText">0</p><button class="buysellButton">Buy</button><button class="buysellButton">Sell</button></article>
+            
+            <button id="nextDay" style="background-color: blue;">Next day</button>
+        </div>
 
-    <div class="buttons">
-    <button id="1">Hrozný, 1 hvězdička</button>
-    <button id="2">Docela špatný, 2 hvězdičky</button>
-    <button id="3">Ušlo to, 3 hvězdičky</button>
-    <button id="4">Dobrý, 4 hvězdičky</button>
-    <button id="5">Vynikající! 5 hvězdiček!</button>
     </div>
 
-
-    <p id="hlasovaloText">Už hlasovalo 0 lidí</p>
-    <p id="prumerText">Prumer je 0 hvezdicek</p>
+</body>

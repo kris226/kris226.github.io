@@ -1,6 +1,4 @@
-p {
-    color: rgb(255, 0, 157); font-size: 50px;
-}
+
 
 a {
     color:rgb(255, 0, 0); font-size: 75px;
@@ -43,20 +41,34 @@ body {
   }
   
 
+  .moneyText{
+    color: rgb(68, 0, 255);
+    font-size: 70px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+
+
   .fruitTexts{
-    width: 60%;
+    font-size: 50px;
+    color: rgb(255, 0, 157);
+    gap: 10px;              /* space between elements */
+    margin-top: 20px;
+  }
+
+
+  .fruitTab{
     background-color: rgb(0, 218, 170);
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding: 10px 20px;
-    font-size: 16px;
     display: flex;
     flex-direction: column; /* stack buttons and link vertically */
     align-items: center;    /* center horizontally */
     justify-content: center;
-    gap: 10px;              /* space between elements */
-    margin-top: 20px;
   }
 
   .Item {
@@ -64,6 +76,7 @@ body {
     align-items: center;
     gap: 10px;      /* space between the text and button */
     margin-bottom: 10px;
+    height: 70px;
   }
 
 
@@ -86,3 +99,22 @@ body {
     transform: scale(0.96);       /* Press effect */
   }
   
+
+  .item-text {
+    display: block;
+    width: 230px;
+    text-align: left;
+}
+
+.item-count {
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 20px;
+}
+
+.item-count-margin {
+  margin-left: 0px;
+  color: rgb(29, 110, 202);
+}
