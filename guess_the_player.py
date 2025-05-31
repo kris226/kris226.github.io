@@ -105,65 +105,6 @@ new_players = []
 
 
 
-def Game_nationalityes():
-    points = 0
-    max_points = len(players)
-
-
-    for i in range(len(players)):
-        clear()
-        random_number = random.randint(0, len(players) - 1)
-        correct_answer = players[random_number].nationality.lower()
-        if input(f"Hello! Which country is {players[random_number]} from? \n").lower() == correct_answer:
-            print("Thats correct!!!")
-            time.sleep(3)
-            points += 1
-        else:
-            print(f"stupid idiot... Its {correct_answer}")
-            time.sleep(3)
-
-        players.pop(random_number)
-
-
-    print(f"You got {points} points out of {max_points}") 
-
-def Game_Teams():
-    points = 0
-    max_points = len(players)
-
-    for i in range(len(players)):
-        clear()
-        random_number = random.randint(0, len(players))
-        correct_answer = players[random_number].team.lower()
-        if input(f"Hello! Which team is {players[random_number]} from? \n").lower() == correct_answer:
-            print("Thats correct!!!")
-            time.sleep(3)
-            points += 1
-        else:
-            print(f"stupid idiot... Its {correct_answer}")
-            time.sleep(3)
-
-        players.pop(random_number)
-
-
-    print(f"You got {points} points out of {max_points}") 
-
-
-def player_games():
-
-
-    game_wanted = input("Which game do you want to play? \n 1- Nationality game \n 2- Team game \n")
-    if game_wanted == "1":
-        Game_nationalityes()
-
-    elif game_wanted == "2":
-        Game_Teams()
-
-
-
-
-
-
 def ask_nationality(nationality):
     global players
     new_players = []
