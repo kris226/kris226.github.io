@@ -16,7 +16,7 @@ print(polivka.find("p").text)
 def clear():
     os.system("cls")
 
-
+clear()
 
 
 
@@ -46,10 +46,10 @@ print(30*"-")
 
 
 class Player:
-    def __init__(self, name, team, nationallity, position):
+    def __init__(self, name, team, nationality, position):
         self.name = name
         self.team = team
-        self.nationallity = nationallity
+        self.nationality = nationality
         self.position = position
 
 
@@ -57,19 +57,29 @@ class Player:
         return self.name
 
 
-    def is_from_country(self, country):
-        
-        if self.name == "Jude Bellingham":
-            print("belingham was at 1")
-        
-        print("got to 2")
-        
-        
-        if self.nationallity == country:
-            print("got to 3")
+    def is_from_nationality(self, country):
+        if self.nationality == country:
             return True
         else:
             return False
+        
+
+    def is_from_team(self, team):
+        if self.team == team:
+            return True
+        else:
+            return False
+
+
+    def is_from_position(self, position):
+            
+            if self.position == position:
+                return True
+            else:
+                return False
+
+
+
 
 
 print(30*"-")
@@ -90,12 +100,12 @@ print(players)
 clear()
 
 
+new_players = []
 
 
 
 
-
-def Game_nationallityes():
+def Game_nationalityes():
     points = 0
     max_points = len(players)
 
@@ -103,7 +113,7 @@ def Game_nationallityes():
     for i in range(len(players)):
         clear()
         random_number = random.randint(0, len(players) - 1)
-        correct_answer = players[random_number].nationallity.lower()
+        correct_answer = players[random_number].nationality.lower()
         if input(f"Hello! Which country is {players[random_number]} from? \n").lower() == correct_answer:
             print("Thats correct!!!")
             time.sleep(3)
@@ -142,33 +152,189 @@ def Game_Teams():
 def player_games():
 
 
-    game_wanted = input("Which game do you want to play? \n 1- Nationallity game \n 2- Team game \n")
+    game_wanted = input("Which game do you want to play? \n 1- Nationality game \n 2- Team game \n")
     if game_wanted == "1":
-        Game_nationallityes()
+        Game_nationalityes()
 
     elif game_wanted == "2":
         Game_Teams()
 
 
 
-if input("is your player english?") == "no":
-    print("got to 1")
+
+
+
+def ask_nationality(nationality):
+    global players
+    new_players = []
+    input_lol = input(f"is your player from {nationality}?").lower()
+
+
+    if input_lol == "no":
+        
+        print("not from france")
+        print_player_names()
+
+
+
+        for player in players:
+            if player.is_from_nationality(nationality) == False:
+                new_players.append(player)
+
+
+    elif input_lol== "yes":
+        for player in players:
+            if player.is_from_nationality(nationality) == True:
+                new_players.append(player)
+
+    players = new_players
+
+
+
+    print(30*"+")
+
+
+def ask_team(team):
+    global players
+    new_players = []
+    input_lol = input(f"does your player play in {team}?").lower()
+
+
+    if input_lol == "no":
+        
+        for player in players:
+            if player.is_from_team(team) == False:
+                new_players.append(player)
+
+
+    elif input_lol== "yes":
+        for player in players:
+            if player.is_from_team(team) == True:
+                new_players.append(player)
+
+    players = new_players
+
+
+    print(30*"+")
+
+
+def ask_position(position):
+    global players
+    new_players = []
+    input_lol = input(f"is your player a {position}?").lower()
+
+
+    if input_lol == "no":
+        
+        for player in players:
+            if player.is_from_position(position) == False:
+                new_players.append(player)
+
+
+    elif input_lol== "yes":
+        for player in players:
+            if player.is_from_position(position) == True:
+                new_players.append(player)
+
+    players = new_players
+
+    print(30*"+")
+
+
+
+
+
+
+def print_player_names():
     for player in players:
-        if player.is_from_country("England") == True:
-            print(f"removing {player.name}")
-            players.remove(player)
+        print(player.name)
+    print(len(players))
 
 
-elif input("is your player english?") == "yes":
-    for player in players:
-        if player.is_from_country("England") == False:
-            print(f"removing {player.name}")
-            players.remove(player)
 
 
-for player in players:
+
+
+
+
+def find_most_helpfull():
+    global best_kriterium, best_name, best_number
+
+
+    nationalities = []
+    teams = []
+    positions = []
+
     
-    print(player.name)
+    best_number = 0
+    best_name = None
+    best_kriterium = None
 
-print(len(players))
+    for player in players:
+        nationalities.append(player.nationality)
+        teams.append(player.team)
+        positions.append(player.position)
 
+    print_player_names()
+
+    print(nationalities)
+    print(teams)
+    print(positions)
+
+    for i in range(len(nationalities)):
+        if nationalities.count(nationalities[i]) > best_number and nationalities.count(nationalities[i]) < len(nationalities):
+            best_number = nationalities.count(nationalities[i])
+            best_name = nationalities[i]
+            best_kriterium = "nationality"
+
+
+
+    for i in range(len(teams)):
+        if teams.count(teams[i]) > best_number and teams.count(teams[i]) < len(teams):
+            best_number = teams.count(teams[i])
+            best_name = teams[i]
+            best_kriterium = "team"
+
+
+    for i in range(len(positions)):
+        if positions.count(positions[i]) > best_number and positions.count(positions[i]) < len(positions):
+            best_number = positions.count(positions[i])
+            best_name = positions[i]
+            best_kriterium = "position"
+
+
+    print(best_name)
+    print(best_number)
+    print(best_kriterium)
+
+
+
+clear()
+
+# find_most_helpfull()
+
+def ask_best():
+
+    find_most_helpfull()
+
+    if best_kriterium == "nationality":
+        ask_nationality(best_name)
+
+
+    if best_kriterium == "team":
+        ask_team(best_name)
+
+
+    if best_kriterium == "position":
+        ask_position(best_name)
+
+
+
+for i in range(100):
+    if len(players) == 1:
+        if input(f"Is your player {players[0].name}?") == "yes":
+            clear()
+            print("Lets goooo")
+            exit()
+
+    ask_best()
