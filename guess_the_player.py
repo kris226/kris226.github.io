@@ -169,11 +169,11 @@ def ask_nationality(nationality):
     new_players = []
     input_lol = input(f"is your player from {nationality}?").lower()
 
+    clear()
+
 
     if input_lol == "no":
         
-        print("not from france")
-        print_player_names()
 
 
 
@@ -191,13 +191,14 @@ def ask_nationality(nationality):
 
 
 
-    print(30*"+")
 
 
 def ask_team(team):
     global players
     new_players = []
     input_lol = input(f"does your player play in {team}?").lower()
+
+    clear()
 
 
     if input_lol == "no":
@@ -215,13 +216,13 @@ def ask_team(team):
     players = new_players
 
 
-    print(30*"+")
-
 
 def ask_position(position):
     global players
     new_players = []
     input_lol = input(f"is your player a {position}?").lower()
+
+    clear()
 
 
     if input_lol == "no":
@@ -238,7 +239,6 @@ def ask_position(position):
 
     players = new_players
 
-    print(30*"+")
 
 
 
@@ -275,11 +275,7 @@ def find_most_helpfull():
         teams.append(player.team)
         positions.append(player.position)
 
-    print_player_names()
 
-    print(nationalities)
-    print(teams)
-    print(positions)
 
     for i in range(len(nationalities)):
         if nationalities.count(nationalities[i]) > best_number and nationalities.count(nationalities[i]) < len(nationalities):
@@ -303,9 +299,6 @@ def find_most_helpfull():
             best_kriterium = "position"
 
 
-    print(best_name)
-    print(best_number)
-    print(best_kriterium)
 
 
 
