@@ -2,6 +2,7 @@ import os
 import urllib.request
 import random
 import time
+from player_class import Player
 from http.client import HTTPResponse
 
 import bs4
@@ -43,18 +44,6 @@ print(30*"-")
 
 
 
-
-
-class Player:
-    def __init__(self, name, team, nationallity, position):
-        self.name = name
-        self.team = team
-        self.nationality = nationallity
-        self.position = position
-
-
-    def __repr__(self):
-        return self.name
 
 
 
