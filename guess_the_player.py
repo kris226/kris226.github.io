@@ -1,17 +1,12 @@
 import os
-import urllib.request
 import random
 import time
 from player_class import Player
-from http.client import HTTPResponse
+from scraping_module import scrape_players
 
-import bs4
 
-odpoved : HTTPResponse = urllib.request.urlopen("https://www.givemesport.com/ballon-dor-power-rankings/")
 
-polivka = bs4.BeautifulSoup(odpoved, "html.parser")
 
-print(polivka.find("p").text)
 
 
 def clear():
@@ -23,45 +18,9 @@ clear()
 
 
 
-tables = polivka.find_all("table")
-rows = tables[0].find_all("tr")
-# print(tables[0])
 
-print(20*"-")
+players : list[Player] = scrape_players()
 
-for row in rows:
-    print(row)
-    print(20*"-")
-
-
-
-print(30*"-")
-sloupce = rows[3].find_all("td")
-for s in sloupce:
-    print(s.p.text)
-print(30*"-")
-
-
-
-
-
-
-
-
-
-
-
-
-print(30*"-")
-
-
-players : list[Player] = []
-for row in rows[2:]:
-
-    sloupce = row.find_all("td")
-    players.append(Player(sloupce[1].p.text, sloupce[2].p.text, sloupce[3].p.text, sloupce[4].p.text))
-
-    
 
 print(players)
 
@@ -242,3 +201,9 @@ for i in range(100):
             exit()
 
     ask_best()
+
+
+
+
+
+
