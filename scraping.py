@@ -49,7 +49,7 @@ class Player:
     def __init__(self, name, team, nationallity, position):
         self.name = name
         self.team = team
-        self.nationallity = nationallity
+        self.nationality = nationallity
         self.position = position
 
 
@@ -76,21 +76,15 @@ print(players)
 clear()
 
 
-
-
-
-
-
-def Game_nationallityes():
+def Game_Both(atribute, extr):
     points = 0
     max_points = len(players)
 
-
     for i in range(len(players)):
         clear()
-        random_number = random.randint(0, len(players) - 1)
-        correct_answer = players[random_number].nationallity.lower()
-        if input(f"Hello! Which country is {players[random_number]} from? \n").lower() == correct_answer:
+        random_number = random.randint(0, len(players)-1)
+        correct_answer = extr(players[random_number]).lower()
+        if input(f"Hello! What is the {atribute} of {players[random_number]}? \n").lower() == correct_answer:
             print("Thats correct!!!")
             time.sleep(3)
             points += 1
@@ -101,35 +95,33 @@ def Game_nationallityes():
         players.pop(random_number)
 
 
-    print(f"You got {points} points out of {max_points}") 
-
-
-def Game_Teams():
-    points = 0
-    max_points = len(players)
-
-    for i in range(len(players)):
-        clear()
-        random_number = random.randint(0, len(players))
-        correct_answer = players[random_number].team.lower()
-        if input(f"Hello! Which team is {players[random_number]} from? \n").lower() == correct_answer:
-            print("Thats correct!!!")
-            time.sleep(3)
-            points += 1
-        else:
-            print(f"stupid idiot... Its {correct_answer}")
-            time.sleep(3)
-
-        players.pop(random_number)
-
-
-    print(f"You got {points} points out of {max_points}") 
+    print(f"You got {points} points out of {max_points}")
 
 
 
-game_wanted = input("Which game do you want to play? \n 1- Nationallity game \n 2- Team game \n")
+
+def nationality_extr(player : Player):
+    return player.nationality
+
+
+
+def team_extr(player : Player):
+    return player.team
+
+
+def position_extr(player : Player):
+    return player.position
+
+
+
+
+game_wanted = input("Which game do you want to play? \n 1- Nationallity game \n 2- Team game \n 3- Position game \n")
 if game_wanted == "1":
-    Game_nationallityes()
+    Game_Both("country", nationality_extr)
 
 elif game_wanted == "2":
-    Game_Teams()
+    Game_Both("team", team_extr)
+
+
+elif game_wanted == "3":
+    Game_Both("position", position_extr)
